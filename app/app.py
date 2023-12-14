@@ -1,12 +1,13 @@
 from flask import Flask, render_template, send_from_directory
+import socket
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    pod_name = os.getenv('HOSTNAME', 'Unknown Pod Name')
-    pod_ip = os.getenv('POD_IP', 'Unknown Pod IP')
+    container_name = socket.gethostname()
+    container_ip = socket.gethostbyname(container_name)
 
     return render_template('index.html', pod_name=pod_name, pod_ip=pod_ip)
 

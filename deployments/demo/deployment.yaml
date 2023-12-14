@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx-santa
-        image: finnbogi/santa:0.5
+        image: finnbogi/santa:0.6
         ports:
         - containerPort: 80
