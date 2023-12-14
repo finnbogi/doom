@@ -38,7 +38,7 @@ cat ./deployments/whoami/whoami-ingress-tls.yaml | envsubst | kubectl apply -f -
 
 ```
 
-## Conveniance
+## Convenience
 
 ```bash
 source <(kubectl completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first.
