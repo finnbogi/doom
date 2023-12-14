@@ -9,7 +9,7 @@ def index():
     container_name = socket.gethostname()
     container_ip = socket.gethostbyname(container_name)
 
-    return render_template('index.html', pod_name=pod_name, pod_ip=pod_ip)
+    return render_template('index.html', container_name=container_name, container_ip=container_ip)
 
 @app.route('/static/<path:filename>')
 def serve_static(filename):
