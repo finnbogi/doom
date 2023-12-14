@@ -1,9 +1,7 @@
-# deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-santa-deployment
-  namespace: cad
 spec:
   replicas: 1
   selector:
@@ -15,14 +13,7 @@ spec:
         app: nginx-santa
     spec:
       containers:
-      - name: cad-santa
+      - name: nginx-santa
         image: finnbogi/santa:0.1
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: html-volume
-          mountPath: /usr/share/nginx/html
-      volumes:
-      - name: html-volume
-        configMap:
-          name: nginx-santa-html

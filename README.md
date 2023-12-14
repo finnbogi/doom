@@ -38,6 +38,18 @@ cat ./deployments/whoami/ingress.yaml | envsubst | kubectl apply -f -
 
 ```
 
+### Santa APP
+```bash
+kubectl apply -f ./deployments/demo/namespace.yaml 
+kubectl apply -f ./deployments/demo/deployment.yaml 
+kubectl apply -f ./deployments/demo/service.yaml
+
+# DOMAIN environment variable required
+# export DOMAIN=yourdomain.com
+cat ./deployments/demo/ingress.yaml | envsubst | kubectl apply -f -
+
+```
+
 ## Convenience
 
 ```bash
