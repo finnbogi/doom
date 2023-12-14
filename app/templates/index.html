@@ -35,6 +35,6 @@
     <h1>🎄 Kubernetes Christmas Container 🎄</h1>
     <p>Container Name: <strong>{{ pod_name }}</strong></p>
     <p>Container IP: <strong>{{ pod_ip }}</strong></p>
-    <img src="santa-xmas.jpeg" alt="Santa Playing PC">
+    <img src="{{ url_for('static', filename='your-image.jpg') }}" alt="Santa Playing PC">
 </body>
 </html>
