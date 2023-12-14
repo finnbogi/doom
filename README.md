@@ -29,12 +29,12 @@ cat ./deployments/letsencrypt/traefik-https-redirect-middleware.yaml | envsubst 
 
 ```bash
 kubectl apply -f ./deployments/whoami/namespace.yaml 
-kubectl apply -f ./deployments/whoami/whoami-deployment.yaml 
-kubectl apply -f ./deployments/whoami/whoami-service.yaml
+kubectl apply -f ./deployments/whoami/deployment.yaml 
+kubectl apply -f ./deployments/whoami/service.yaml
 
 # DOMAIN environment variable required
 # export DOMAIN=yourdomain.com
-cat ./deployments/whoami/whoami-ingress-tls.yaml | envsubst | kubectl apply -f -
+cat ./deployments/whoami/ingress.yaml | envsubst | kubectl apply -f -
 
 ```
 
