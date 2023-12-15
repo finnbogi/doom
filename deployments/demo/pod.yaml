@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-santa-pod
+  namespace: cad
+  labels:
+    name: nginx-santa
+spec:
+  containers:
+  - name: santa-container
+    image: finnbogi/santa:0.7.1
+    ports:
+      - containerPort: 80
