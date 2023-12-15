@@ -9,7 +9,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
 spec:
   rules:
-    - host: santa.${DOMAIN}
+    - host: santa.gitops.dk
       http:
         paths:
           - path: /
@@ -22,4 +22,4 @@ spec:
   tls:
     - secretName: santa-tls
       hosts:
-        - santa.${DOMAIN}
+        - santa.gitops.dk
