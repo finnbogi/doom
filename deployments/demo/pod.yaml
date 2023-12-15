@@ -1,13 +1,13 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: santa-container
-  namespace: cad
-  labels:
-    app: santa-container
-spec:
-  containers:
-  - name: santa-container
-    image: finnbogi/santa:0.7.1
-    ports:
-      - containerPort: 80
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: santa-container
+#   namespace: cad
+#   labels:
+#     app: santa-container
+# spec:
+#   containers:
+#   - name: santa-container
+#     image: finnbogi/santa:0.7.1
+#     ports:
+#       - containerPort: 80

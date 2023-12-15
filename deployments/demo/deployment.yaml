@@ -1,20 +1,20 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: nginx-santa-deployment
-#   namespace: cad
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: santa-container
-#   template:
-#     metadata:
-#       labels:
-#         app: santa-container
-#     spec:
-#       containers:
-#       - name: santa-container
-#         image: finnbogi/santa:0.7.1
-#         ports:
-#         - containerPort: 80
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-santa-deployment
+  namespace: cad
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: santa-container
+  template:
+    metadata:
+      labels:
+        app: santa-container
+    spec:
+      containers:
+      - name: santa-container
+        image: finnbogi/santa:0.7.1
+        ports:
+        - containerPort: 80
