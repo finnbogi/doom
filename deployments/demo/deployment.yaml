@@ -4,7 +4,7 @@ metadata:
   name: nginx-santa-deployment
   namespace: cad
 spec:
-  replicas: 10
+  replicas: 2
   selector:
     matchLabels:
       app: santa-container
