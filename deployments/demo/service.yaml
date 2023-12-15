@@ -5,7 +5,7 @@ metadata:
   namespace: cad
 spec:
   selector:
-    app: nginx-santa
+    app: santa-container
   ports:
     - protocol: TCP
       port: 80

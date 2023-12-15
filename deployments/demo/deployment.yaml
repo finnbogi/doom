@@ -7,14 +7,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-santa
+      app: santa-container
   template:
     metadata:
       labels:
-        app: nginx-santa
+        app: santa-container
     spec:
       containers:
-      - name: nginx-santa
+      - name: santa-container
         image: finnbogi/santa:0.7.1
         ports:
         - containerPort: 80

@@ -4,7 +4,7 @@ metadata:
   name: nginx-santa-pod
   namespace: cad
   labels:
-    name: nginx-santa
+    name: santa-container
 spec:
   containers:
   - name: santa-container
