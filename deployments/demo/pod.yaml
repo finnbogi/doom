@@ -4,7 +4,7 @@ metadata:
   name: santa-container
   namespace: cad
   labels:
-    name: santa-container
+    app: santa-container
 spec:
   containers:
   - name: santa-container
