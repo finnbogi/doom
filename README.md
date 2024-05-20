@@ -38,17 +38,69 @@ cat ./deployments/whoami/ingress.yaml | envsubst | kubectl apply -f -
 
 ```
 
-### Santa APP
-```bash
-kubectl apply -f ./deployments/demo/namespace.yaml 
-kubectl apply -f ./deployments/demo/deployment.yaml 
-kubectl apply -f ./deployments/demo/service.yaml
-
-# DOMAIN environment variable required
-# export DOMAIN=yourdomain.com
+### Santa App Deployment
+1. **Deploy the Santa app, which represents a demon in the game, where each instance is a pod**
+    ```bash
+    kubectl apply -f ./deployments/demo/namespace.yaml 
+    kubectl apply -f ./deployments/demo/deployment.yaml 
+    kubectl apply -f ./deployments/demo/service.yaml
+    ```
+2. **Set the DOMAIN environment variable**
+    ```sh
+    # export DOMAIN=yourdomain.com
+    ```
+3. **Deploy Santa app ingress**
+```sh
 cat ./deployments/demo/ingress.yaml | envsubst | kubectl apply -f -
-
 ```
+
+## Running Kube DOOM Locally
+
+### Prerequisites
+
+- Docker or Podman installed
+- VNC viewer installed
+- Kubernetes configuration file (`~/.kube/config`)
+
+### Running with Docker
+
+```sh
+docker run -p 5901:5900 \
+  --net=host \
+  -v ~/.kube:/root/.kube \
+  --rm -it --name kubedoom \
+  ghcr.io/storax/kubedoom:latest
+```
+
+### Optional: Limit to a Namespace
+
+```sh
+docker run -p 5901:5900 \
+  --net=host \
+  -v ~/.kube:/root/.kube \
+  -e NAMESPACE={your namespace} \
+  --rm -it --name kubedoom \
+  ghcr.io/storax/kubedoom:latest
+```
+
+### Connecting via VNC
+
+1. Start a VNC viewer.
+2. Connect to `localhost:5901`.
+3. The password is `idbehold`.
+
+```sh
+vncviewer viewer localhost:5901
+```
+
+### Playing DOOM
+
+- Enter the cheat `idspispopd` to walk through walls.
+- Your pods will appear as little pink monsters.
+- Press `CTRL` to fire.
+- Use `idkfa` for all weapons and press `5` for a surprise.
+- Pause the game with `ESC`.
+
 
 ## Convenience
 
